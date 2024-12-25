@@ -1,4 +1,4 @@
-const asyncHandler = require("../../middleware/asyncHandler");
+const asyncHandler = require("../../middleware/asyncHandler")
 
 const logoutCurrentUser = asyncHandler(async(req, res) => {
     res.cookie("jwt", "", {
@@ -6,7 +6,7 @@ const logoutCurrentUser = asyncHandler(async(req, res) => {
         expires: new Date(0),
       });
     
-      res.status(200).json({ message: "Logged out successfully" });
+      res.status(200).json({ message: "Logged out successfully" })
 })
 
 module.exports = logoutCurrentUser

@@ -1,6 +1,6 @@
  const express = require('express');
  const router = express.Router();
- // Controller imports
+ // CONTROLLER IMPORTS
  const userSignUp = require('../controller/user/userSignUp.js');
  const userSignIn = require('../controller/user/userSignIn.js');
  const logoutCurrentUser = require('../controller/user/logoutCurrentUser.js');
@@ -13,6 +13,7 @@
  const {authenticate} = require('../middleware/authMiddleware.js');
  const {authorizeAdmin} = require('../middleware/authMiddleware.js')
 
+ // CUSTOMERS ROUTES
  router.post("/sign-up", userSignUp), 
  router.post("/sign-in", userSignIn);
  router.get("/all-users", authenticate, authorizeAdmin, getAllUsers); 
@@ -21,6 +22,7 @@
  .route("/profile")
  .get(authenticate, getCurrentUserProfile)
  .put(authenticate, updateCurrentUserProfile);
+
  // ADMIN ROUTES
  router
  .route("/admin/:id")

@@ -1,7 +1,6 @@
 const asyncHandler = require('../../middleware/asyncHandler');
 const productModel = require('../../models/productModel');
 
- 
 const addProduct = asyncHandler(async (req, res) => {
   try {
     const { name, brand, description, price, category, quantity, countInStock, image } = req.body;

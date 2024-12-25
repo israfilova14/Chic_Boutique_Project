@@ -55,7 +55,7 @@ const Navigation = () => {
   return (
     <div 
       style={{ zIndex: 999 }} 
-      className={`flex flex-col justify-between p-4 text-white bg-[#0D0D0D] h-[100vh] fixed transition-all ease-in-out 
+      className={`flex flex-col justify-between p-4 text-white bg-[#121212] h-[100vh] fixed transition-all ease-in-out 
         ${showSidebar ? 'hidden' : 'w-[5%] xl:w-[5%] lg:w-[5%] md:w-[5%] sm:w-[5%] hover:w-[15%]'} `}
       id='navigation-container'
     >
