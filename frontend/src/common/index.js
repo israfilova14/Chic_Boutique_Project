@@ -1,4 +1,4 @@
-const backendDomen = "http://localhost:5050";
+const backendDomen = "http://localhost:5050"
 
 const SummaryApi = {
    //USERS ROUTES

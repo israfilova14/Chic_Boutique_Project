@@ -1,5 +1,5 @@
-import {apiSlice} from './apiSlice';
-import SummaryApi from '../../common';
+import {apiSlice} from './apiSlice'
+import SummaryApi from '../../common'
 
 export const userApiSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
@@ -45,7 +45,7 @@ export const userApiSlice = apiSlice.injectEndpoints({
     }),
 
     deleteUser: builder.mutation({
-      query: userId => ({
+      query: (userId) => ({
          url: `${SummaryApi.deleteUser.url}/${userId}`,
          method: SummaryApi.deleteUser.method
       }),
@@ -54,7 +54,8 @@ export const userApiSlice = apiSlice.injectEndpoints({
 
     getUserDetails: builder.query({
       query: (userId) => ({
-          url: `${SummaryApi.userDetails.url}/${userId}`
+          url: `${SummaryApi.userDetails.url}/${userId}`,
+          method: SummaryApi.userDetails.method
       }),
         keepUnusedDataFor: 5
     }),

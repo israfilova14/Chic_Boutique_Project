@@ -1,4 +1,4 @@
-import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react';
+import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react'
 const backendDomen = "http://localhost:5050" 
 
 const baseQuery = fetchBaseQuery({
