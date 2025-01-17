@@ -1,6 +1,6 @@
 import React from 'react';
-import Message from '../message';
-import Loader from '../../loader';
+import Message from '../../../helpers/message/index.js';
+import Loader from '../../../helpers/loader';
 import { Link } from 'react-router-dom';
 import { useGetUserOrdersQuery } from '../../../../redux/api/orderApiSlice';
 import AdminMenu from '../admin_menu';

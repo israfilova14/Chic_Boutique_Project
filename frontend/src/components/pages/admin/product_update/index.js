@@ -3,7 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { useUpdateProductMutation, useGetProductByIdQuery, useDeleteProductMutation } from '../../../../redux/api/productApiSlice';
 import { useAllCategoriesQuery } from '../../../../redux/api/categoryApiSlice';
 import { toast } from 'react-toastify';
-import UploadImage from '../../../../helpers/UploadImage';
+import UploadImage from '../../../helpers/UploadImage.js';
 import AdminMenu from '../admin_menu/index.js';
 
 const ProductUpdate = () => {
@@ -98,7 +98,7 @@ const ProductUpdate = () => {
           toast.error(error)
       } else {
           toast.success("Product updated successfully")
-        navigate("/admin/all-products-list/:pageNumber");
+          navigate("/admin/all-products-list/:pageNumber");
       }
     } catch (err) {
       console.log(err);

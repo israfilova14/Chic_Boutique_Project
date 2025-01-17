@@ -1,8 +1,8 @@
 import React from 'react';
-import Message from '../admin/message';
-import Loader from '../loader';
+import Message from '../../../helpers/message/index.js';
+import Loader from '../../../helpers/loader/index.js';
 import { Link } from 'react-router-dom';
-import { useGetUserOrdersQuery } from '../../../redux/api/orderApiSlice';
+import { useGetUserOrdersQuery } from '../../../../redux/api/orderApiSlice';
 
 const UserOrders = () => {
   const {data: orders, isLoading, error} = useGetUserOrdersQuery();

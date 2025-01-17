@@ -3,9 +3,9 @@ import {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import { useGetFilteredProductsQuery } from '../../../redux/api/productApiSlice';
 import {setCategories, setProducts, setChecked} from '../../../redux/features/shop/shopSlice';
-import Loader from '../loader/index';
+import Loader from '../../helpers/loader/index.js';
 import { useAllCategoriesQuery } from '../../../redux/api/categoryApiSlice';
-import ProductCard from '../product_card';
+import ProductCard from '../products/product_card/index.js';
 
 
 const Shop = () => {
@@ -68,10 +68,10 @@ const Shop = () => {
   }
   return (
     <div>
-       <div className='container mx-auto'>
-          <div className='flex md:flex-row'>
+       <div className='container ml-[5rem]'>
+          <div className='flex md:flex-row '>
               <div className='bg-[#151515] p-3 mt-2 mb-2'>
-                 <h2 className='text-center py-2 px-3 bg-[#1DB954] rounded-full mb-2 font-bold'>
+                 <h2 className='text-center py-2 px-3 bg-[#1DB954] rounded-full mb-2 font-bold text-white'>
                      Filter by Categories
                  </h2>
                  <div className='p-5 w-[15rem]'>
@@ -98,14 +98,14 @@ const Shop = () => {
                       ))
                     }
                  </div>
-                 <h2 className='text-center py-2 bg-[#1DB954] rounded-full mb-2 font-bold'>
+                 <h2 className='text-center py-2 bg-[#1DB954] rounded-full mb-2 font-bold text-white'>
                     Filter by brands
                  </h2>
                  <div className='p-5'>
                     {
                       uniqueBrands?.map((brand) => (
                         <>
-                        <div className='flex items-center mr-4 mb-5'>
+                        <div className='flex items-center mr-4 mb-3'>
                             <input 
                               type='radio' 
                               id={brand} 
@@ -117,7 +117,7 @@ const Shop = () => {
                               />
                               <label 
                                htmlFor='pink-radio'
-                               className='ml-2 texxt-sm font-medium text-white dark:text-gray-300'
+                               className='ml-2 text-sm font-medium text-white dark:text-gray-300'
                                > 
                                {brand}
                                </label>
@@ -126,7 +126,7 @@ const Shop = () => {
                       ))
                     }
                  </div>
-                  <h2 className='text-center py-2 px-1 bg-[#1DB954] rounded-full mb-2 font-bold'>
+                  <h2 className='text-center py-2 px-1 bg-[#1DB954] rounded-full mb-2 font-bold text-white'>
                        Filter By Price
                   </h2>
                   <div className='p-5 w-[15rem]'>
@@ -135,12 +135,12 @@ const Shop = () => {
                        placeholder='Enter Price' 
                        value={priceFilter} 
                        onChange={handlePriceChange}
-                       className='bg-[#333333]'
+                       className='bg-[#f5f5f5]'
                       />
                   </div>
                   <div className='p-5 pt-0'>
                      <button 
-                      className='w-full border my-4 px-3 py-2 rounded-xl bg-[#1DB954] font-bold'
+                      className='w-full border my-4 px-3 py-2 rounded-xl bg-[#1DB954] font-bold text-white'
                       onClick={() => window.location.reload()}
                       >
                         Reset
@@ -156,7 +156,8 @@ const Shop = () => {
                     (
                       <Loader/>
                     )
-                    :(
+                    :
+                    (
                       products?.map((p) => (
                         <div className='p-3' key={p._id}>
                             <ProductCard p={p}/>

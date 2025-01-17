@@ -6,8 +6,8 @@ import {
   useDeleteCategoryMutation,
   useAllCategoriesQuery
 } from '../../../../redux/api/categoryApiSlice'
-import CategoryForm from './category_form';
-import Modal from './modal';
+import CategoryForm from '../category_form';
+import Modal from '../../../helpers/modal';
 import AdminMenu from '../admin_menu';
 
 const CategoryList = () => {

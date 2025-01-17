@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useLoginMutation } from '../../../../redux/api/usersApiSlice';
 import { setCredentials } from '../../../../redux/features/auth/authSlice';
 import {toast} from 'react-toastify';
-import Loader from '../../loader';
+import Loader from '../../../helpers/loader/index.js';
 import loginBackground from '../../../../images/auth.avif';
 
 const SignIn = () => {
@@ -49,7 +49,7 @@ const SignIn = () => {
                </h1>
                <form className='container w-[40rem]' onSubmit={submitHandler}>
                   <div className='my-[2rem]'>
-                     <label htmlFor='email' className='block text-sm font-medium text-white'>
+                     <label htmlFor='email' className='block text-sm font-medium'>
                          Email Address
                      </label>
                      <input
@@ -57,13 +57,13 @@ const SignIn = () => {
                         type='email'
                         id='email'
                         placeholder='Enter your email...'
-                        className='mt-1 p-2 border rounded outline-none w-full bg-[#1E1E1E]'
+                        className='mt-1 p-2 border rounded outline-none w-full bg-[#f5f5f5]'
                         value={email}
                         onChange={e => setEmail(e.target.value)}
                      />
                   </div>
                   <div className='my-[2rem]'>
-                     <label htmlFor='password' className='block text-sm font-medium text-white'>
+                     <label htmlFor='password' className='block text-sm font-medium'>
                          Password
                      </label>
                      <input
@@ -71,7 +71,7 @@ const SignIn = () => {
                         type='password'
                         id='password'
                         placeholder='Enter your password...'
-                        className='mt-1 p-2 border rounded outline-none w-full bg-[#1E1E1E]'
+                        className='mt-1 p-2 border rounded outline-none w-full bg-[#f5f5f5]'
                         value={password}
                         onChange={e => setPassword(e.target.value)}
                      />
@@ -86,7 +86,7 @@ const SignIn = () => {
                   {isLoading && <Loader/>}
                </form>
                <div className='mt-4'>
-                   <p className='text-white'>
+                   <p>
                       New Customer?  {"    "}
                       <Link 
                         to={redirect ? `/signup?signup=${redirect}`: '/signup'}
@@ -99,7 +99,7 @@ const SignIn = () => {
            </div>
            <img 
               src={loginBackground} 
-              className='h-[55rem] w-[47%] xl:block md:hidden sm:hidden rounded-lg object-cover'
+              className='h-[44rem] w-[47%] xl:block md:hidden sm:hidden rounded-lg object-cover'
            />
        </section>
     </div>

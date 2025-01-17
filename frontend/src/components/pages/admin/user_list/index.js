@@ -5,8 +5,8 @@ import {
   FaCheck,
   FaTimes
 } from 'react-icons/fa';
-import Loader from '../../loader';
-import Message from '../message/index';
+import Loader from '../../../helpers/loader/index.js';
+import Message from '../../../helpers/message/index.js';
 import { toast } from 'react-toastify';
 import {
   useGetUsersQuery,

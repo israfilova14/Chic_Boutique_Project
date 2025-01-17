@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import {AiOutlineShoppingCart} from 'react-icons/ai';
 import { useDispatch } from 'react-redux';
-import {addToCart} from '../../../redux/features/cart/cartSlice';
+import {addToCart} from '../../../../redux/features/cart/cartSlice';
 import {toast} from 'react-toastify';
 import HeartIcon from '../heart_icon/index';
 
@@ -14,7 +14,7 @@ const ProductCard = ({p}) => {
   }
 
   return (
-    <div className='max-w-sm w-[240px] h-full relative bg-[#1A1A1A] rounded-lg shadow dark:bg-gray-800 dark:border-gray-700'>
+    <div className='w-[270px] h-full relative bg-[#1A1A1A] rounded-lg shadow border border-gray-500'>
        <section className='relative'>
            <Link to={`/product/${p._id}`}>
               <span className='absolute bottom-3 right-3 bg-pink-100 text-pink-800 
@@ -58,7 +58,7 @@ const ProductCard = ({p}) => {
               className='p-2 rounded-full'
               onClick={() => addToCartHandler(p, 1)}
               >
-                <AiOutlineShoppingCart size={25}/>
+                <AiOutlineShoppingCart size={25} className='text-white'/>
               </button>
          </section>
        </div>

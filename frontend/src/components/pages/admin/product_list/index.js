@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { toast } from 'react-toastify';
 import AdminMenu from '../admin_menu/index';
-import UploadImage from '../../../../helpers/UploadImage';
+import UploadImage from '../../../helpers/UploadImage.js';
 import { useNavigate } from 'react-router-dom';
 import { useUploadProductMutation } from '../../../../redux/api/productApiSlice';
 import { useAllCategoriesQuery } from '../../../../redux/api/categoryApiSlice';

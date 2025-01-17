@@ -2,9 +2,9 @@ import React from 'react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import ProductRating from '../product_ratings';
-import { useGetTopProductQuery } from '../../../redux/api/productApiSlice';
+import { useGetTopProductQuery } from '../../../../redux/api/productApiSlice.js';
 import SmallProduct from '../small_product/index';
-import Loader from '../loader';
+import Loader from '../../../helpers/loader/index.js';
 
 const ProductTab = ({
   loadingProductReview, 

@@ -1,10 +1,10 @@
 import React from 'react';
 import {Link, useParams} from 'react-router-dom';
 import { useGetProductsQuery } from '../../../redux/api/productApiSlice';
-import Loader from '../loader';
+import Loader from '../../helpers/loader';
 import Header from '../../layout/header';
-import Message from '../admin/message';
-import Product from '../product';
+import Message from '../../helpers/message';
+import Product from '../products/product';
 
 const Home = () => {
   const {keyword} = useParams();
@@ -12,7 +12,7 @@ const Home = () => {
   console.log(data);
   
   return (
-    <div className=''>
+    <div>
        {!keyword ? <Header/> : null}
        {isLoading ? (<Loader/>) : isError ? (<Message variant='danger'>
         {isError?.data.message || isError.error}
@@ -21,14 +21,14 @@ const Home = () => {
        (
         <>
         <div className='flex justify-between items-center'>
-           <h1 className='ml-[20rem] mt-[10rem] text-[2.5rem]'>
+           <h1 className='ml-[20rem] mt-[5rem] text-[1.7rem] font-medium'>
               Special Products
            </h1>
-           <Link to='/shop' className='bg-pink-600 font-bold rounded-full py-2 px-10 mr-[18rem] mt-[10rem]'>
+           <Link to='/shop' className='bg-pink-600 text-white font-bold rounded-full py-2 px-10 mr-[18rem] mt-[5rem]'>
             Shop
            </Link>
         </div>
-        <div className='flex flex-wrap items-center gap-[30px] w-[80%] mx-auto'>
+        <div className='flex flex-wrap items-center gap-[30px] w-[80%] mx-auto mt-[1rem]'>
             {
               data.products.map((product) => (
                 <div key={product._id}>

@@ -1,51 +1,48 @@
-import React from 'react';
-import './style.css';
-import { useState } from 'react';
+import React, {useState} from 'react'
 import {
   AiOutlineHome,
   AiOutlineShopping,
   AiOutlineLogin, 
   AiOutlineUserAdd, 
   AiOutlineShoppingCart,
-  AiFillShopping
-} from 'react-icons/ai';
-import { FaHeart } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
-import { useLogoutMutation} from '../../../redux/api/usersApiSlice';
-import { logout } from '../../../redux/features/auth/authSlice';
-import { toast } from 'react-toastify';
-import FavoriteCount from '../../pages/favorite_count';
+} from 'react-icons/ai'
+import { FaHeart } from 'react-icons/fa'
+import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
+import { useSelector, useDispatch } from 'react-redux'
+import { useLogoutMutation} from '../../../redux/api/usersApiSlice'
+import { logout } from '../../../redux/features/auth/authSlice'
+import { toast } from 'react-toastify'
+import FavoriteCount from '../../pages/products/favorite_count/index.js'
 
 const Navigation = () => {
-  const {userInfo} = useSelector(state => state.auth);
-  const {cartItems} = useSelector((state) => state.cart);
-  const [dropdownOpen, setDropdownOpen] = useState(false);
-  const [showSidebar, setShowSidebar] = useState(false);
+  const {userInfo} = useSelector(state => state.auth)
+  const {cartItems} = useSelector((state) => state.cart)
+  const [dropdownOpen, setDropdownOpen] = useState(false)
+  const [showSidebar, setShowSidebar] = useState(false)
 
   const toggleDropdown = () => {
-    setDropdownOpen(!dropdownOpen);
+    setDropdownOpen(!dropdownOpen)
   }
 
   const toggleSidebar = () => {
-    setShowSidebar(!showSidebar);
+    setShowSidebar(!showSidebar)
   }
 
   const closeSidebar = () => {
     setShowSidebar(false)
   }
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
 
-  const [logoutApiCall] = useLogoutMutation();
+  const [logoutApiCall] = useLogoutMutation()
 
   const logoutHandler = async () => {
       try{
-          await logoutApiCall().unwrap();
-          dispatch(logout());
+          await logoutApiCall().unwrap()
+          dispatch(logout())
           toast.success('Logout successfully !')
-          navigate("/signin");
+          navigate("/signin")
       }
       catch(err){
           console.error(err)
@@ -176,7 +173,7 @@ const Navigation = () => {
                      </li>
                      <li>
                         <Link 
-                          to={'/admin/profile'}
+                          to={'/profile'}
                           className='block px-4 py-2 hover:bg-gray-100'
                         >
                             Profile

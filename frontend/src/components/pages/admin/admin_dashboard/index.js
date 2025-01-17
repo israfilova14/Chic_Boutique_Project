@@ -1,14 +1,14 @@
 import React, {useState, useEffect} from 'react';
 import Chart from 'react-apexcharts';
-import { useGetUsersQuery } from '../../../redux/api/usersApiSlice';
+import { useGetUsersQuery } from '../../../../redux/api/usersApiSlice';
 import {
    useGetTotalOrdersQuery, 
    useGetTotalSalesByDateQuery, 
    useGetTotalSalesQuery 
-} from '../../../redux/api/orderApiSlice';
-import AdminMenu from '../admin/admin_menu';
-import OrderList from '../admin/order_list';
-import Loader from '../loader';
+} from '../../../../redux/api/orderApiSlice';
+import AdminMenu from '../admin_menu';
+import OrderList from '../order_list';
+import Loader from '../../../helpers/loader';
 
 const AdminDashboard = () => {
   const {data: sales, isLoading} = useGetTotalSalesQuery();

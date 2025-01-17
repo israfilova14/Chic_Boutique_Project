@@ -4,7 +4,7 @@ import {useState, useEffect} from 'react';
 import {Link, useLocation, useNavigate} from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 //-----------------------------------------------------------------------
-import Loader from '../../loader';
+import Loader from '../../../helpers/loader/index.js';
 import {setCredentials } from '../../../../redux/features/auth/authSlice';
 import {toast} from 'react-toastify';
 import {useSignupMutation } from '../../../../redux/api/usersApiSlice';
@@ -76,7 +76,7 @@ const SignUp = () => {
                 <div className='my-[2rem]'>
                     <label 
                        htmlFor='name' 
-                       className='block text-sm font-medium text-white'
+                       className='block text-sm font-medium'
                     >
                       Username
                     </label>
@@ -84,7 +84,7 @@ const SignUp = () => {
                        required
                        type='text'
                        id='name'
-                       className='mt-1 p-2 border rounded w-full bg-[#1E1E1E]'
+                       className='mt-1 p-2 border rounded w-full bg-[#f5f5f5]'
                        placeholder='Enter your name...'
                        value={username}
                        onChange={e => setUserName(e.target.value)}
@@ -93,7 +93,7 @@ const SignUp = () => {
                 <div className='my-[2rem]'>
                     <label 
                        htmlFor='email' 
-                       className='block text-sm font-medium text-white'
+                       className='block text-sm font-medium'
                     >
                       Email Address
                     </label>
@@ -101,7 +101,7 @@ const SignUp = () => {
                        required
                        type='email'
                        id='email'
-                       className='mt-1 p-2 border rounded w-full bg-[#1E1E1E]'
+                       className='mt-1 p-2 border rounded w-full bg-[#f5f5f5]'
                        placeholder='Enter your email...'
                        value={email}
                        onChange={e => setEmail(e.target.value)}
@@ -110,7 +110,7 @@ const SignUp = () => {
                 <div className='my-[2rem]'>
                     <label 
                        htmlFor='password' 
-                       className='block text-sm font-medium text-white'
+                       className='block text-sm font-medium'
                     >
                        Password
                     </label>
@@ -118,7 +118,7 @@ const SignUp = () => {
                        required
                        type='password'
                        id='password'
-                       className='mt-1 p-2 border rounded w-full bg-[#1E1E1E]'
+                       className='mt-1 p-2 border rounded w-full bg-[#f5f5f5]'
                        placeholder='Enter your name...'
                        value={password}
                        onChange={e => setPassword(e.target.value)}
@@ -127,7 +127,7 @@ const SignUp = () => {
                 <div className='my-[2rem]'>
                     <label 
                        htmlFor='confirmPassword' 
-                       className='block text-sm font-medium text-white'
+                       className='block text-sm font-medium'
                     >
                       Confirm Password
                     </label>
@@ -135,7 +135,7 @@ const SignUp = () => {
                        required
                        type='password'
                        id='confirmPassword'
-                       className='mt-1 p-2 border rounded w-full bg-[#1E1E1E]'
+                       className='mt-1 p-2 border rounded w-full bg-[#f5f5f5]'
                        placeholder='Confirm Password...'
                        value={confirmPassword}
                        onChange={e => setConfirmPassword(e.target.value)}
@@ -153,7 +153,7 @@ const SignUp = () => {
                 }
             </form>
             <div className='mt-4'>
-                   <p className='text-white'>
+                   <p>
                       Already have an account?  {"    "}
                       <Link 
                         to={redirect ? `/signin?signin=${redirect}`: '/signin'}
@@ -166,7 +166,7 @@ const SignUp = () => {
         </div>
         <img 
             src={signUp} 
-            className='h-[55rem] w-[47%] xl:block md:hidden sm:hidden rounded-lg object-cover'
+            className='h-[44rem] w-[47%] xl:block md:hidden sm:hidden rounded-lg object-cover'
         />
     </section>
   )

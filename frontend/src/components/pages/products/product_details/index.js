@@ -2,15 +2,15 @@ import React, { useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
-import { useGetProductDetailsQuery, useCreateReviewMutation } from '../../../redux/api/productApiSlice';
-import Loader from '../loader';
-import Message from '../admin/message';
+import { useGetProductDetailsQuery, useCreateReviewMutation } from '../../../../redux/api/productApiSlice.js';
+import Loader from '../../../helpers/loader/index.js';
+import Message from '../../../helpers/message/index.js';
 import { FaBox, FaClock, FaShoppingCart, FaStar, FaStore } from 'react-icons/fa';
 import moment from 'moment';
 import HeartIcon from '../heart_icon';
 import ProductRating from '../product_ratings';
-import ProductTab from '../product_tap';
-import { addToCart } from '../../../redux/features/cart/cartSlice';
+import ProductTab from '../../../pages/products/product_tap/index.js';
+import { addToCart } from '../../../../redux/features/cart/cartSlice';
 
 const InfoRow = ({ icon: Icon, label, value }) => (
   <h1 className='flex items-center mb-6'>

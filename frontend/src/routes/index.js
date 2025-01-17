@@ -1,32 +1,32 @@
-import { createBrowserRouter } from "react-router-dom";
-import App from "../App";
+import { createBrowserRouter } from "react-router-dom"
+import App from "../App"
 
-// PRIVATE COMPONENT
-import PrivateRoute from "../components/pages/authentication/private_route"; 
+// PRIVATE COMPONENT😊
+import PrivateRoute from "../components/helpers/private_route/index.js"
 
-// COMPONENTS
-import SignIn from "../components/pages/authentication/sign_in";
-import SignUp from "../components/pages/authentication/sign_up";
-import Profile from "../components/pages/user_profile"; 
-import Cart from "../components/pages/cart";
-import Shop from "../components/pages/shop";
-import Shipping from "../components/pages/orders";
-import UserOrders from "../components/pages/user_orders";
-
-// ADMIN ROUTE
-import AdminRoute from "../components/pages/admin/admin_route";
-import UserList from "../components/pages/admin/user_list";
-import CategoryList from "../components/pages/admin/category_list";
-import ProductList from "../components/pages/admin/product_list";
-import ProductUpdate from "../components/pages/admin/product_update";
-import AllProducts from "../components/pages/admin/all_products";
+// CUSTOMER ROUTES😊
 import Home from "../components/pages/home";
-import Favorites from "../components/pages/favorites";
-import ProductDetails from "../components/pages/product_details";
-import PlaceOrder from "../components/pages/orders/place_order";
-import Order from "../components/pages/orders/order";
-import OrderList from "../components/pages/admin/order_list";
-import AdminDashboard from "../components/pages/admin_dashboard";
+import SignIn from '../components/pages/authentication/sign_in/index.js'
+import SignUp from '../components/pages/authentication/sign_up/index.js'
+import Cart from '../components/pages/cart/index.js'
+import Shop from '../components/pages/shop/index.js'
+import Order from '../components/pages/orders/order/index.js'
+import UserOrders from '../components/pages/user/user_orders/index.js'
+import Profile from '../components/pages/user/user_profile/index.js'
+import Shipping from "../components/pages/orders/shipping"
+import ProductDetails from '../components/pages/products/product_details/index.js'
+import PlaceOrder from '../components/pages/orders/place_order/index.js'
+import Favorites from '../components/pages/products/favorites/index.js'
+
+// ADMIN ROUTES😊
+import OrderList from '../components/pages/admin/order_list/index.js'
+import UserList from '../components/pages/admin/user_list/index.js'
+import CategoryList from '../components/pages/admin/category_list/index.js'
+import ProductList from '../components/pages/admin/product_list/index.js'
+import ProductUpdate from '../components/pages/admin/product_update/index.js'
+import AllProducts from '../components/pages/admin/all_products/index.js'
+import AdminDashboard from '../components/pages/admin/admin_dashboard/index.js'
+import AdminRoute from '../components/pages/admin/admin_route/index.js'
 
 const router = createBrowserRouter(
   [

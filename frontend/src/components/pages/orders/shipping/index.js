@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {useNavigate} from 'react-router-dom';
-import {saveShippingAddress, savePaymentMethod} from '../../../redux/features/cart/cartSlice';
-import ProgressSteps from './progress_steps';
+import {saveShippingAddress, savePaymentMethod} from '../../../../redux/features/cart/cartSlice';
+import ProgressSteps from '../../../helpers/progress_steps/index.js';
 
 const Shipping = () => {
   const cart = useSelector((state) => state.cart);

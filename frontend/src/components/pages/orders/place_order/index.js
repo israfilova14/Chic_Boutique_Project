@@ -2,9 +2,9 @@ import React, { useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { useDispatch, useSelector } from 'react-redux';
-import Message from '../../admin/message';
-import ProgressSteps from '../progress_steps';
-import Loader from '../../loader';
+import Message from '../../../helpers/message/index.js';
+import ProgressSteps from '../../../helpers/progress_steps/index.js';
+import Loader from '../../../helpers/loader/index.js';
 import { clearCartItems } from '../../../../redux/features/cart/cartSlice';
 import { useCreateOrderMutation } from '../../../../redux/api/orderApiSlice';
 
