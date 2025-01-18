@@ -18,30 +18,30 @@ const AllProducts = () => {
   }
 
   return (
-    <div className='container mx-[9rem]'>
+    <div className='container ml-[6rem]'>
        <div className='flex flex-col md:flex-row'>
           <div className='p-3'>
-             <div className='ml-[2rem] text-xl fontbold h-12'>
-                 All Products ({products.length})
+             <div className='text-center text-xl font-semibold h-12'>
+                 All <span className='text-[#1DB954]'> Products ({products.length})</span>
              </div>
-             <div className='flex flex-wrap justify-around items-center'>
+             <div className='flex flex-wrap justify-evenly items-center'>
                 {products?.map((product) => (
-                  <div key={product._id}  className='block mb-4 overflow-hidden'>
+                  <div key={product._id}  className='w-[520px] h-[200px] block mb-4 overflow-hidden bg-white rounded-lg'>
                       <div className='flex'>
-                         <img src={product.image} alt={product.name} className='w-[10rem] object-cover'/>
+                         <img src={product.image} alt={product.name} className='w-[180px] h-[180px] object-cover mix-blend-multiply'/>
                          <div className='p-4 flex flex-col justify-around'>
                              <div className='flex justify-between'>
-                                 <h5 className='text-xl font-semibold mb-2'>
+                                 <h5 className='text-lg font-semibold mb-2 text-neutral-900'>
                                     {product?.name}
                                  </h5>
-                                 <p className='text-gray-400 text-sm'>
+                                 <p className='text-gray-900 text-sm'>
                                     {moment(product.createAt).format("MMMM Do YYYY")}
                                  </p>
                              </div>
-                             <p className='text-gray-400 xl:w-[30rem] md:w-[20rem] sm:w-[10rem] text-sm mb-4'>
+                             <p className='text-gray-900 text-sm mb-4'>
                               {
-                                product?.description?.substring(0, 160)
-                              }...
+                                product?.description
+                              }
                              </p>
                              <div className='flex justify-between'>
                                 <Link 

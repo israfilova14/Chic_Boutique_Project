@@ -1,56 +1,47 @@
-import React from 'react';
-import { ImCheckboxChecked } from "react-icons/im";
+import React from 'react'
 
 const ProgressSteps = ({step1, step2, step3}) => {
   return (
     <div className='flex justify-center items-center space-x-4'>
-       <div className={`${step1 ? 'text-green-500' : 'text-gray-300'}`}>
-          <span className='ml-2'>Login</span>
-          <div className='mt-2 text-lg text-center bg-green-500 color-white'>
-              <ImCheckboxChecked/>
-          </div>
-       </div>
-       {
-        step2 && (
-          <>
-            {
-              step1 && <div className='h-0.5 w-[10rem] bg-green-500'></div>
-            }
-            <div className={`${step1 ? 'text-green-500' : 'text-gray-300'}`}>
-             <span>Shipping</span>
-             <div className='mt-2 text-lg text-center bg-green-500 color-white'>
-              <ImCheckboxChecked/>
-             </div>
-            </div>
-          </>
-        )
-       }
-       <>
-        {step1 && step2 && step3 
-            ?
-            (
-              <div className='h-0.5 w-[10rem] bg-green-500'></div>
-            )
-            :
-            (
-              <div>""</div>
-            )
+        <div className={`${step1 ? "text-[#1DB954]" : 'text-white'} text-lg`}>
+            <span className='ml-2 font-semibold'>Login</span>
+            <div className='mt-2 text-lg text-center'>✅</div>
+        </div>
+
+        {
+          step2 && (
+            <>
+              {step1 && <div className='h-0.5 w-[10rem] bg-[#1DB954]'></div>}
+              <div className={`${step1 ? "text-[#1DB954]" : 'text-white'} text-lg`}>
+                 <span className='font-semibold'>Shipping</span>
+                 <div className='mt-2 text-lg text-center'>✅</div>
+              </div>
+            </>
+          )
         }
-        <div className={`${step3 ? 'text-green-500' : 'text-gray-300'}`}>
-            <span className={`${!step3 ? 'ml-[]10rem]' : ''}`}>Summary</span>
-            {
-              step1 && step2 && step3 ? (
-                <div className='mt-2 text-lg text-center'>
-                  <ImCheckboxChecked/>
-                </div>
+
+        <>
+          {step1 && step2 && step3 
+              ? 
+              (
+                <div className='h-0.5 w-[10rem] bg-[#1DB954]'></div>
               )
               :
-              (
-                <div></div>
-              )
-            }
-        </div>
-       </>
+              ("")
+           }
+           <div className={`${step3 ? 'text-[#1DB954]' : 'text-white'}`}>
+               <span className={`${!step3 ? 'ml-[10rem]' : ''} font-semibold text-lg`}>Summary</span>
+               {
+                  step1 && step2 && step3 
+                  ? 
+                  (
+                      <div className='mt-2 text-lg text-center'>✅</div>
+                  )
+                  :
+                  ("")
+               }
+           </div>
+        </>
     </div>
   )
 }

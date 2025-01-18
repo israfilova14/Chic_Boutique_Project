@@ -10,7 +10,7 @@ const OrderList = () => {
    console.log("orders", orders);
  
   return (
-    <div>
+    <div className='ml-[6rem]'>
       {isLoading 
        ?
        (<Loader/>)
@@ -20,7 +20,7 @@ const OrderList = () => {
        (<Message variant='danger'>{error?.data?.message || error?.error}</Message>)
        :
        (
-         <div className='ml-[6rem]'>
+         <div>
                <AdminMenu/>
                <h2 className='text-2xl font-semibold'>Order <span className='text-[#1DB954]'>List.</span></h2>
               <table className='container w-[85%] mt-[20px] bg-white text-black'>

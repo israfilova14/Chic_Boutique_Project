@@ -77,20 +77,20 @@ const ProductUpload = () => {
       <div className="flex flex-col md:flex-row">
         <AdminMenu />
         <div className="md:w-3/4 p-3">
-          <h2 className="h-12 text-2xl">Create Product</h2>
+          <h2 className="h-12 text-2xl font-semibold">Upload <span className='text-[#1DB954]'>Product.</span></h2>
 
           {data.image && (
-            <div className="text-center">
+            <div className="flex items-center justify-center">
               <img
-                src={data.image} // URL burada göstərilir
+                src={data.image} 
                 alt="product"
-                className="block h-[240px] w-[240px]"
+                className="block h-[200px] w-[200px]"
               />
             </div>
           )}
 
-          <div className="mb-3">
-            <label className="border text-white px-4 block w-full text-center rounded-lg cursor-pointer text-xl py-11">
+          <div className="bg-[#4a4a4a]">
+            <label className="border text-white px-4 py-9 block w-full text-center rounded-lg cursor-pointer text-lg">
               {data.image ? "Image Uploaded" : "Upload Image"}
               <input
                 type="file"
@@ -102,23 +102,24 @@ const ProductUpload = () => {
             </label>
           </div>
 
-          <div className="p-3">
-            <div className="flex justify-between flex-wrap">
-              <div className='flex flex-col'>
-                <label htmlFor="name">Name</label> <br />
+            <div className="flex justify-between flex-wrap mt-4">
+              <div className='flex flex-col gap-2'>
+                <label htmlFor="name">Name</label>
                 <input
                   type="text"
-                  className="p-4 mb-3 w-[30rem] border rounded-lg bg-[#101011] text-white"
+                  placeholder='Enter product name...'
+                  className="p-3 w-[30rem] border rounded-lg bg-[#4a4a4a] text-white"
                   name="name"
                   value={data.name}
                   onChange={handleOnChange}
                 />
               </div>
-              <div className="flex flex-col">
-                <label htmlFor="price">Price</label> <br />
+              <div className="flex flex-col gap-2">
+                <label htmlFor="price">Price</label>
                 <input
                   type="number"
-                  className="p-4 mb-3 w-[30rem] border rounded-lg bg-[#101011] text-white"
+                  placeholder='Enter product price...'
+                  className="p-3 w-[30rem] border rounded-lg bg-[#4a4a4a] text-white"
                   name="price"
                   value={data.price}
                   onChange={handleOnChange}
@@ -126,22 +127,24 @@ const ProductUpload = () => {
               </div>
             </div>
 
-            <div className="flex justify-between flex-wrap">
-              <div className='flex flex-col'>
-                <label htmlFor="quantity">Quantity</label> <br />
+            <div className="flex justify-between flex-wrap mt-4">
+              <div className='flex flex-col gap-2'>
+                <label htmlFor="quantity">Quantity</label>
                 <input
                   type="number"
-                  className="p-4 mb-3 w-[30rem] border rounded-lg bg-[#101011] text-white"
+                  placeholder='Enter product quantity...'
+                  className="p-3 w-[30rem] border rounded-lg bg-[#4a4a4a] text-white"
                   name="quantity"
                   value={data.quantity}
                   onChange={handleOnChange}
                 />
               </div>
-              <div className="flex flex-col">
-                <label htmlFor="brand">Brand</label> <br />
+              <div className="flex flex-col gap-2">
+                <label htmlFor="brand">Brand</label>
                 <input
                   type="text"
-                  className="p-4 mb-3 w-[30rem] border rounded-lg bg-[#101011] text-white"
+                  placeholder='Enter product brand...'
+                  className="p-3 w-[30rem] border rounded-lg bg-[#4a4a4a] text-white"
                   name="brand"
                   value={data.brand}
                   onChange={handleOnChange}
@@ -150,32 +153,34 @@ const ProductUpload = () => {
             </div>
 
          
-          <div className='flex flex-col flex-wrap'>
+          <div className='flex flex-col gap-2 flex-wrap mt-4'>
           <label htmlFor="description">Description</label>
           <textarea
-              className="p-5 mb-3 bg-[#101011] border rounded-lg w-[99%] text-white"
+              className="p-5 bg-[#4a4a4a] border rounded-lg w-[99%] text-white"
+              placeholder='Enter product description...'
               name="description"
               value={data.description}
               onChange={handleOnChange}
             ></textarea>
           </div>
 
-            <div className="flex justify-between flex-wrap">
-              <div className='flex flex-col'>
-                <label htmlFor="countInStock">Count In Stock</label> <br />
+            <div className="flex justify-between flex-wrap mt-4">
+              <div className='flex flex-col gap-2'>
+                <label htmlFor="countInStock">Count In Stock</label>
                 <input
                   type="number"
-                  className="p-4 mb-3 w-[30rem] border rounded-lg bg-[#101011] text-white"
+                  className="p-3 w-[30rem] border rounded-lg bg-[#4a4a4a] text-white"
+                  placeholder='Enter product count in stock ....'
                   name="countInStock"
                   value={data.countInStock}
                   onChange={handleOnChange}
                 />
               </div>
-              <div className='flex flex-col'>
-                <label htmlFor="category">Category</label> <br />
+              <div className='flex flex-col gap-2'>
+                <label htmlFor="category">Category</label>
                 <select
                   name="category"
-                  className="w-[30rem] p-4 mb-3 border rounded-lg text-white bg-[#101011]"
+                  className="w-[30rem] p-3 border rounded-lg text-white bg-[#4a4a4a]"
                   onChange={handleOnChange}
                 >
                   {categories?.map((category) => (
@@ -188,7 +193,7 @@ const ProductUpload = () => {
             </div>
 
             <button
-              className="bg-green-500 text-white px-5 py-2 rounded-lg"
+              className="bg-[#1DB954] hover:bg-[#17A34A] text-white px-5 py-2 rounded-lg mt-4"
               type="submit"
               onClick={handleSubmit}
             >
@@ -197,7 +202,7 @@ const ProductUpload = () => {
           </div>
         </div>
       </div>
-    </div>
+   
   );
 };
 

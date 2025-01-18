@@ -37,7 +37,9 @@ const AdminMenu = () => {
                  <ul className='list-none mt-2'>
                     <li>
                        <NavLink 
-                         className={({ isActive }) => `list-item py-2 px-3 d-block mb-5 hover:bg-[#2E2D2D] rounded-sm ${isActive ? "text-[greenyellow]" : "text-white"}`} 
+                         className={
+                           ({ isActive }) => `list-item py-2 px-3 d-block mb-5 hover:bg-[#2E2D2D] rounded-sm ${isActive ? "text-[greenyellow]" : "text-white"}`
+                         } 
                          to='/admin/dashboard'
                         
                         >
@@ -46,7 +48,9 @@ const AdminMenu = () => {
                     </li>
                     <li>
                        <NavLink 
-                         className={({ isActive }) => `list-item py-2 px-3 d-block mb-5 hover:bg-[#2E2D2D] rounded-sm ${isActive ? "text-[greenyellow]" : "text-white"}`} 
+                         className={
+                           ({ isActive }) => `list-item py-2 px-3 d-block mb-5 hover:bg-[#2E2D2D] rounded-sm ${isActive ? "text-[greenyellow]" : "text-white"}`
+                         } 
                          to='/admin/category-list'
                         
                         >
@@ -55,16 +59,20 @@ const AdminMenu = () => {
                     </li>
                     <li>
                        <NavLink 
-                         className={({ isActive }) => `list-item py-2 px-3 d-block mb-5 hover:bg-[#2E2D2D] rounded-sm ${isActive ? "text-[greenyellow]" : "text-white"}`} 
+                         className={
+                           ({ isActive }) => `list-item py-2 px-3 d-block mb-5 hover:bg-[#2E2D2D] rounded-sm ${isActive ? "text-[greenyellow]" : "text-white"}`
+                        } 
                          to='/admin/upload-product'
                     
                         >
-                            Create Product
+                            Upload Product
                         </NavLink>
                     </li>
                     <li>
                        <NavLink 
-                         className={({ isActive }) => `list-item py-2 px-3 d-block mb-5 hover:bg-[#2E2D2D] rounded-sm ${isActive ? "text-[greenyellow]" : "text-white"}`} 
+                         className={
+                           ({ isActive }) => `list-item py-2 px-3 d-block mb-5 hover:bg-[#2E2D2D] rounded-sm ${isActive ? "text-[greenyellow]" : "text-white"}`
+                        } 
                          to='/admin/all-products-list/:pageNumber'
                       
                         >
@@ -73,20 +81,24 @@ const AdminMenu = () => {
                     </li>
                     <li>
                        <NavLink 
-                         className={({ isActive }) => `list-item py-2 px-3 d-block mb-5 hover:bg-[#2E2D2D] rounded-sm ${isActive ? "text-[greenyellow]" : "text-white"}`} 
+                         className={
+                           ({ isActive }) => `list-item py-2 px-3 d-block mb-5 hover:bg-[#2E2D2D] rounded-sm ${isActive ? "text-[greenyellow]" : "text-white"}`
+                        } 
                          to='/admin/users'
                        
                         >
-                           Manage Users
+                           Users List
                         </NavLink>
                     </li>
                     <li>
                        <NavLink 
-                         className={({ isActive }) => `list-item py-2 px-3 d-block mb-5 hover:bg-[#2E2D2D] rounded-sm ${isActive ? "text-[greenyellow]" : "text-white"}`} 
-                         to=''
+                         className={
+                           ({ isActive }) => `list-item py-2 px-3 d-block mb-5 hover:bg-[#2E2D2D] rounded-sm ${isActive ? "text-[greenyellow]" : "text-white"}`
+                        } 
+                         to='/admin/order-list'
                       
                         >
-                           Manage Orders
+                           Orders List
                         </NavLink>
                     </li>
                  </ul>

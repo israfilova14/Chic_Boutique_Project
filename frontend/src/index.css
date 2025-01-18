@@ -28,6 +28,11 @@ input::placeholder{
   font-size: 14px;
 }
 
+textarea::placeholder{
+   color: #fff;
+   font-size: 14px;
+}
+
 #categoryInp::placeholder{
   color: black
 }

@@ -120,18 +120,18 @@ const ProductUpdate = () => {
   }
 
   return (
-    <div className="container xl:mx-[9rem] sm:mx-[0]">
+    <div className="container ml-[6rem]">
       <div className="flex flex-col md:flex-row">
         <AdminMenu />
         <div className="md:w-3/4 p-2">
-          <h2 className="h-10 text-2xl font-semibold">Update Product</h2>
+          <h2 className="h-10 text-2xl font-semibold">Update <span className='text-[#1DB954]'>Product.</span></h2>
 
           {/* Display current image */}
-          <div className="flex items-center">
-            <div className="flex gap-5">
+          <div className="flex items-center justify-center">
+            <div>
               {data.image && (
                 <div>
-                  <img src={data.image} alt="product" className="w-[240px] h-[240px]" />
+                  <img src={data.image} alt="product" className="w-[210px] h-[210px]" />
                 </div>
               )}
             </div>
@@ -142,7 +142,7 @@ const ProductUpdate = () => {
             <label
               htmlFor="upload"
               onClick={handleClick}
-              className="border text-white text-xl px-4 block w-full text-center rounded-lg cursor-pointer py-11 bg-[#1E1E1E]"
+              className="border text-white text-lg px-4 py-9 block w-full text-center rounded-lg cursor-pointer bg-[#4a4a4a]"
             >
               {data.image ? `Uploaded Image` : 'Upload Image'}
               <input
@@ -157,22 +157,22 @@ const ProductUpdate = () => {
           </div>
 
           <div>
-            <div className="flex justify-between">
-              <div className="flex flex-col">
-                <label htmlFor="name">Name</label><br />
+            <div className="flex justify-between flex-wrap mt-3">
+              <div className="flex flex-col gap-2">
+                <label htmlFor="name">Name</label>
                 <input
                   type="text"
-                  className="p-4 w-[30rem] rounded-lg text-white bg-[#1E1E1E]"
+                  className="p-3 w-[30rem] rounded-lg text-white bg-[#4a4a4a]"
                   name="name"
                   value={data.name}
                   onChange={handleOnChange}
                 />
               </div>
-              <div className="flex flex-col">
-                <label htmlFor="price">Price</label><br />
+              <div className="flex flex-col gap-2">
+                <label htmlFor="price">Price</label>
                 <input
                   type="number"
-                  className="p-4 mb-3 w-[30rem] rounded-lg text-white bg-[#1E1E1E]"
+                  className="p-3 w-[30rem] rounded-lg text-white bg-[#4a4a4a]"
                   name="price"
                   value={data.price}
                   onChange={handleOnChange}
@@ -180,54 +180,56 @@ const ProductUpdate = () => {
               </div>
             </div>
 
-            <div className="flex justify-between">
-              <div className="flex flex-col">
-                <label htmlFor="quantity">Quantity</label><br />
+            <div className="flex justify-between flex-wrap mt-3">
+              <div className="flex flex-col gap-2">
+                <label htmlFor="quantity">Quantity</label>
                 <input
                   type="number"
-                  className="p-4 mb-3 w-[30rem] rounded-lg text-white bg-[#1E1E1E]"
+                  className="p-3 w-[30rem] rounded-lg text-white bg-[#4a4a4a]"
                   name="quantity"
                   value={data.quantity}
                   onChange={handleOnChange}
                 />
               </div>
-              <div className="flex flex-col">
-                <label htmlFor="brand">Brand</label><br />
+              <div className="flex flex-col gap-2">
+                <label htmlFor="brand">Brand</label>
                 <input
                   type="text"
-                  className="p-4 mb-3 w-[30rem] rounded-lg text-white bg-[#1E1E1E]"
+                  className="p-3 w-[30rem] rounded-lg text-white bg-[#4a4a4a]"
                   name="brand"
                   value={data.brand}
                   onChange={handleOnChange}
                 />
               </div>
             </div>
-            <div className='flex flex-col'>
-          <label htmlFor="description">Description</label>
-          <textarea
-              className="p-5 mb-3 bg-[#1E1E1E] border rounded-lg w-[99%] text-white"
-              name="description"
-              value={data.description}
-              onChange={handleOnChange}
-            ></textarea>
+            <div className='flex flex-col gap-2 mt-3'>
+              <label htmlFor="description">Description</label>
+              <textarea
+                  className="p-5 mb-3 bg-[#4a4a4a] border rounded-lg w-[99%] text-white"
+                  name="description"
+                  value={data.description}
+                  onChange={handleOnChange}
+                >
+
+              </textarea>
           </div>
 
-            <div className="flex justify-between">
-              <div className="flex flex-col gap-6">
+            <div className="flex justify-between flex-wrap mt-3">
+              <div className="flex flex-col gap-2">
                 <label htmlFor="countInStock">Count In Stock</label>
                 <input
                   type="number"
-                  className="p-4 mb-3 w-[30rem] border rounded-lg text-white bg-[#1E1E1E]"
+                  className="p-3 w-[30rem] border rounded-lg text-white bg-[#4a4a4a]"
                   value={data.countInStock}
                   onChange={handleOnChange}
                   name="countInStock"
                 />
               </div>
-              <div className="flex flex-col">
-                <label htmlFor="category">Category</label><br />
+              <div className="flex flex-col gap-2">
+                <label htmlFor="category">Category</label>
                 <select
                   name="category"
-                  className="p-4 mb-3 w-[30rem] border rounded-lg bg-[#1E1E1E] text-white"
+                  className="p-3 w-[30rem] border rounded-lg bg-[#4a4a4a] text-white"
                   value={data.category}
                   onChange={handleOnChange}
                 >
@@ -240,17 +242,17 @@ const ProductUpdate = () => {
                 </select>
               </div>
             </div>
-            <div className='flex items-center gap-4'>
+            <div className='flex items-center gap-12'>
               
             <button
               onClick={handleSubmit}
-              className="py-3 px-10 mt-5 rounded-lg text-lg bg-[#1DB954] hover:bg-[#1C741C]"
+              className="py-2 px-8 mt-3 rounded-lg text-lg bg-[#1DB954] hover:bg-[#1C741C]"
             >
               Update
             </button>
             <button
             onClick={handleDelete}
-              className="py-3 px-10 mt-5 rounded-lg text-lg bg-[#b91d22] hover:bg-[#b91d22]"
+              className="py-2 px-8 mt-3 rounded-lg text-lg bg-[#b91d22] hover:bg-[#b91d22]"
             >
               Delete
             </button>

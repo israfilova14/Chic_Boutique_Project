@@ -97,7 +97,7 @@ const Profile = () => {
                 <div className='flex justify-between'>
                     <button 
                       type='submit' 
-                      className='bg-[#1DB954] text-white py-2 px-4 rounded hover:bg-[#1C741C]'
+                      className='bg-[#1DB954] hover:bg-[#1C741C] text-white py-2 px-4 rounded'
                     >
                         Update
                     </button>

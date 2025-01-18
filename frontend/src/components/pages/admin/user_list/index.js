@@ -70,8 +70,8 @@ const UserList = () => {
   };
 
   return (
-    <div className='p-4'>
-      <h2 className='text-2xl font-semibold mb-4 ml-[9rem]'>
+    <div className='p-4 ml-[9rem]'>
+      <h2 className='text-2xl font-semibold mb-4'>
       User <span className='text-[#1DB954]'>Managament.</span>
       </h2>
 
@@ -89,7 +89,7 @@ const UserList = () => {
       ) : 
       (
         <div className='flex flex-col md:flex-row'>
-          <table className='w-full md:w-4/5 mx-auto bg-white text-black'>
+          <table className='w-full md:w-4/5 bg-white text-black'>
             <thead>
               <tr>
                 <th className='px-4 py-2 text-left border border-black font-semibold'>ID</th>
