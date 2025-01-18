@@ -14,7 +14,7 @@ import { addToCart } from '../../../../redux/features/cart/cartSlice';
 
 const InfoRow = ({ icon: Icon, label, value }) => (
   <h1 className='flex items-center mb-6'>
-    <Icon className='mr-2' />{label}: {value}
+    <Icon className='mr-2 text-[#1eb554]' size={19}/>{label}: {value}
   </h1>
 );
 
@@ -53,20 +53,20 @@ const ProductDetails = () => {
 
   return (
     <div>
-      <Link to='/' className='text-white font-semibold hover:underline ml-[10rem]'>Go Back</Link>
+      <Link to='/' className='font-semibold text-xl hover:underline ml-[10rem] text-[#d51f69]'>Go To Home</Link>
       <div className='flex flex-wrap relative items-between mt-[2rem] ml-[10rem]'>
         <div>
           <img
             src={product?.image}
             alt={product?.name}
-            className='w-[48rem] xl:w-[45rem] lg:w-[42rem] md:w-[30rem] sm:w-[20rem] mr-[2rem] h-[36rem]'
+            className='w-[42rem] xl:w-[42rem] lg:w-[40rem] md:w-[30rem] sm:w-[20rem] mr-[2rem] h-[36rem]'
           />
           <HeartIcon product={product} />
         </div>
         <div className='flex flex-col'>
-          <h2 className='text-3xl font-extrabold'>{product?.name}</h2>
-          <p className='my-4 xl:w-[35rem] lg:w-[35rem] md:w-[30rem] text-[#B0B0B0]'>{product?.description}</p>
-          <p className='text-3xl my-4 font-extrabold'>Price: ${product?.price}</p>
+          <h2 className='text-2xl font-bold'>{product?.name}</h2>
+          <p className='my-4 xl:w-[35rem] lg:w-[35rem] md:w-[30rem]'>{product?.description}</p>
+          <p className='text-2xl my-4 font-bold'>Price: ${product?.price}</p>
           <div className='flex items-center justify-between w-[20rem]'>
             <div>
               <InfoRow icon={FaStore} label="Brand" value={product?.brand} />

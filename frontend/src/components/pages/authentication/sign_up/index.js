@@ -84,7 +84,7 @@ const SignUp = () => {
                        required
                        type='text'
                        id='name'
-                       className='mt-1 p-2 border rounded w-full bg-[#f5f5f5]'
+                       className='mt-1 p-2 border rounded w-full bg-[#4a4a4a] text-white'
                        placeholder='Enter your name...'
                        value={username}
                        onChange={e => setUserName(e.target.value)}
@@ -101,7 +101,7 @@ const SignUp = () => {
                        required
                        type='email'
                        id='email'
-                       className='mt-1 p-2 border rounded w-full bg-[#f5f5f5]'
+                       className='mt-1 p-2 border rounded w-full bg-[#4a4a4a] text-white'
                        placeholder='Enter your email...'
                        value={email}
                        onChange={e => setEmail(e.target.value)}
@@ -118,7 +118,7 @@ const SignUp = () => {
                        required
                        type='password'
                        id='password'
-                       className='mt-1 p-2 border rounded w-full bg-[#f5f5f5]'
+                       className='mt-1 p-2 border rounded w-full bg-[#4a4a4a] text-white'
                        placeholder='Enter your name...'
                        value={password}
                        onChange={e => setPassword(e.target.value)}
@@ -135,7 +135,7 @@ const SignUp = () => {
                        required
                        type='password'
                        id='confirmPassword'
-                       className='mt-1 p-2 border rounded w-full bg-[#f5f5f5]'
+                       className='mt-1 p-2 border rounded w-full bg-[#4a4a4a] text-white'
                        placeholder='Confirm Password...'
                        value={confirmPassword}
                        onChange={e => setConfirmPassword(e.target.value)}

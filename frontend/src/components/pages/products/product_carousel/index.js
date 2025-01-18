@@ -18,7 +18,7 @@ const ProductCarousel = () => {
   console.log(products);
   
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
@@ -54,24 +54,24 @@ const ProductCarousel = () => {
                          <div className='flex justify-between w-[20rem]'>
                             <div className='one'>
                                 <h1 className='flex items-center mb-6 w-[15rem]'>
-                                   <FaStore className='mr-2  text-[#1DB954]' size={20}/> Brand: {brand}
+                                   <FaStore className='mr-2  text-white' size={20}/> Brand: {brand}
                                 </h1>
                                 <h1 className='flex items-center mb-6 w-[15rem]'>
-                                   <FaClock className='mr-2  text-[#1DB954]' size={20}/> Added: {moment(createdAt).fromNow()}
+                                   <FaClock className='mr-2  text-white' size={20}/> Added: {moment(createdAt).fromNow()}
                                 </h1>
                                 <h1 className='flex items-center mb-6 w-[8rem]'>
-                                   <FaStar className='mr-2 text-[#1DB954]' size={20}/> Reviews: {numReviews}
+                                   <FaStar className='mr-2 text-white' size={20}/> Reviews: {numReviews}
                                 </h1>
                             </div>
                             <div className='two'>
                                <h1 className='flex items-center mb-6 w-[10rem]'>
-                                  <FaStar className='mr-2 text-[#1DB954]' size={20}/> Ratings: {Math.round(rating)}
+                                  <FaStar className='mr-2 text-white' size={20}/> Ratings: {Math.round(rating)}
                                </h1>
                                <h1 className='flex items-center mb-6 w-[10rem]'>
-                                  <FaShoppingCart className='mr-2 text-[#1DB954]' size={20}/> Quantity: {quantity}
+                                  <FaShoppingCart className='mr-2 text-white' size={20}/> Quantity: {quantity}
                                </h1>
                                <h1 className='flex items-center mb-6 w-[10rem]'>
-                                  <FaStar className='mr-2 text-[#1DB954]' size={20}/> In Stock: {countInStock}
+                                  <FaStar className='mr-2 text-white' size={20}/> In Stock: {countInStock}
                                </h1>
                             </div>
                          </div>

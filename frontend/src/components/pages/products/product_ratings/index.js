@@ -10,23 +10,23 @@ const ProductRating = ({value, text, color}) => {
   return (
     <div className='flex items-center'>
        {[...Array(fullStar)].map((_, index) => (
-          <FaStar key={index} className={`text-${color} ml-1`}/>
+          <FaStar key={index} className={`text-[#1eb554] ml-1`} size={20}/>
        ))}
 
-       {halfStar === 1 && <FaStarHalfAlt className={`text-${color} ml-1`}/>}
+       {halfStar === 1 && <FaStarHalfAlt className={`text-[#1eb554] ml-1`} size={20}/>}
 
        {
         [...Array(emptyStar)].map((_, index) => (
-          <FaRegStar key={index} className={`text-${color} ml-1`}/>
+          <FaRegStar key={index} className={`text-[#1eb554] ml-1`} size={20}/>
         ))
        }
-       <span className={`rating-text ml-[2rem] text-${color}`}>{text && text}</span>
+       <span className={`rating-text ml-[2rem]`}>{text && text}</span>
     </div>
   )
 }
 
 ProductRating.defaultProps = {
-  color: 'yellow-500'
+  color: '#1eb554'
 }
 
 export default ProductRating

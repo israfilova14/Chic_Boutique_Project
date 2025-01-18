@@ -22,11 +22,11 @@ import Favorites from '../components/pages/products/favorites/index.js'
 import OrderList from '../components/pages/admin/order_list/index.js'
 import UserList from '../components/pages/admin/user_list/index.js'
 import CategoryList from '../components/pages/admin/category_list/index.js'
-import ProductList from '../components/pages/admin/product_list/index.js'
 import ProductUpdate from '../components/pages/admin/product_update/index.js'
 import AllProducts from '../components/pages/admin/all_products/index.js'
 import AdminDashboard from '../components/pages/admin/admin_dashboard/index.js'
 import AdminRoute from '../components/pages/admin/admin_route/index.js'
+import ProductUpload from "../components/pages/admin/product_upload/index.js"
 
 const router = createBrowserRouter(
   [
@@ -106,7 +106,7 @@ const router = createBrowserRouter(
             },
             {
               path: "/admin/upload-product",
-              element: <ProductList/>
+              element: <ProductUpload/>
             },
             {
               path: "/admin/update-product/:_id",

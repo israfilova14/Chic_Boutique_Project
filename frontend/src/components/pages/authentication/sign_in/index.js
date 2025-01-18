@@ -57,7 +57,7 @@ const SignIn = () => {
                         type='email'
                         id='email'
                         placeholder='Enter your email...'
-                        className='mt-1 p-2 border rounded outline-none w-full bg-[#f5f5f5]'
+                        className='mt-1 p-2 border rounded outline-none w-full bg-[#4a4a4a] text-white'
                         value={email}
                         onChange={e => setEmail(e.target.value)}
                      />
@@ -71,7 +71,7 @@ const SignIn = () => {
                         type='password'
                         id='password'
                         placeholder='Enter your password...'
-                        className='mt-1 p-2 border rounded outline-none w-full bg-[#f5f5f5]'
+                        className='mt-1 p-2 border rounded outline-none w-full bg-[#4a4a4a] text-white'
                         value={password}
                         onChange={e => setPassword(e.target.value)}
                      />

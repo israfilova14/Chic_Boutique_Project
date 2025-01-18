@@ -4,10 +4,10 @@ import { toast } from 'react-toastify';
 import AdminMenu from '../admin_menu/index';
 import UploadImage from '../../../helpers/UploadImage.js';
 import { useNavigate } from 'react-router-dom';
-import { useUploadProductMutation } from '../../../../redux/api/productApiSlice';
-import { useAllCategoriesQuery } from '../../../../redux/api/categoryApiSlice';
+import { useUploadProductMutation } from '../../../../redux/api/productApiSlice.js';
+import { useAllCategoriesQuery } from '../../../../redux/api/categoryApiSlice.js';
 
-const ProductList = () => {
+const ProductUpload = () => {
   const [data, setData] = useState({
     name: "",
     brand: "",
@@ -201,4 +201,4 @@ const ProductList = () => {
   );
 };
 
-export default ProductList;
+export default ProductUpload;

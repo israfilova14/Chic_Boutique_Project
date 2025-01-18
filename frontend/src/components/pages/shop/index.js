@@ -148,7 +148,7 @@ const Shop = () => {
                   </div>
               </div>
               <div className='p-3'>
-                <h2 className='text-center mb-2 text-xl'>{products?.length} Products</h2>
+                <h2 className='text-center mb-2 text-xl font-semibold'>{products?.length} Products</h2>
                 <div className='flex flex-wrap'>
                    {
                     products.length === 0 
@@ -159,7 +159,7 @@ const Shop = () => {
                     :
                     (
                       products?.map((p) => (
-                        <div className='p-3' key={p._id}>
+                        <div className='p-1' key={p._id}>
                             <ProductCard p={p}/>
                         </div>
                       ))

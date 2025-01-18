@@ -8,8 +8,8 @@ const UserOrders = () => {
   const {data: orders, isLoading, error} = useGetUserOrdersQuery();
 
   return (
-    <div className='container mx-auto'>
-      <h2 className='text-xl font-semibold mb-4'>My Orders</h2>
+    <div className='container ml-[6rem]'>
+      <h2 className='text-2xl font-semibold mb-4'>My <span className='text-[#1DB954]'>Orders.</span></h2>
       {
         isLoading 
         ? 
@@ -22,69 +22,71 @@ const UserOrders = () => {
         (<Message variant='danger'>{error?.data?.error || error.error}</Message>)
         :
         (
-          <table className='w-full'>
+          <table className='w-[80%] bg-white text-black'>
              <thead>
               <tr>
-                 <td className='py-2'>IMAGE</td>
-                 <td className='py-2'>ID</td>
-                 <td className='py-2'>DATE</td>
-                 <td className='py-2'>TOTAL</td>
-                 <td className='py-2'>PAID</td>
-                 <td className='py-2'>DELIVERED</td>
-                 <td className='py-2'></td>
+                 <td className='py-2 border border-[#2c2c2c] text-center'>IMAGE</td>
+                 <td className='py-2 border border-[#2c2c2c] text-center'>ID</td>
+                 <td className='py-2 border border-[#2c2c2c] text-center'>DATE</td>
+                 <td className='py-2 border border-[#2c2c2c] text-center'>TOTAL</td>
+                 <td className='py-2 border border-[#2c2c2c] text-center'>PAID</td>
+                 <td className='py-2 border border-[#2c2c2c] text-center'>DELIVERED</td>
+                 <td className='py-2 border border-[#2c2c2c] text-center'>DETAILS</td>
               </tr>
              </thead>
              <tbody>
                  {
                   orders?.map((order) => (
                     <tr key={order._id}>
-                        <img 
-                          src={order.orderItems[0].image}
-                          alt={order?.user}
-                          className='w-[6rem] mb-5'
-                        />
-                        <td className='py-2'>
+                        <td className='border border-[#2c2c2c]'> 
+                          <img 
+                            src={order.orderItems[0].image}
+                            alt={order?.user}
+                            className='w-[100px] h-[100px] mb-2 mt-2 mx-auto'
+                          />
+                        </td>
+                        <td className='border border-[#2c2c2c] text-center'>
                            {order?._id}
                         </td>
-                        <td className='py-2'>
+                        <td className='border border-[#2c2c2c] text-center'>
                            {order?.createdAt.substring(0, 10)}
                         </td>
-                        <td className='py-2'>
+                        <td className='border border-[#2c2c2c] text-center'>
                            $ {order?.totalPrice}
                         </td>
-                        <td className='py-2'>
+                        <td className='border border-[#2c2c2c]'>
                             {order?.isPaid 
                             ? 
                             (
-                              <p className='p-1 text-center bg-green-400 w-[6rem] rounded-full'>
+                              <p className='p-1 text-center bg-green-600 w-[6rem] rounded-full text-white mx-auto'>
                                  Completed
                               </p>
                             )
                           :
                           (
-                            <p className='p-1 text-center bg-red-600 w-[6rem] rounded-full'>
+                            <p className='p-1 text-center bg-red-600 w-[6rem] rounded-full text-white mx-auto'>
                                  Pending
                             </p>
                           )}
                         </td>
-                        <td className='px-2 py-2'>
+                        <td className='border border-[#2c2c2c]'>
                             {order?.isDelivered ? (
-                                 <p className='p-1 text-center bg-green-400 w-[6rem] rounded-full'>
+                                 <p className='p-1 text-center bg-green-600 w-[6rem] rounded-full text-white mx-auto'>
                                  Completed
                               </p>
                             )
                           :
                           (
-                            <p className='p-1 text-center bg-red-600 w-[6rem] rounded-full'>
+                            <p className='p-1 text-center bg-red-600 w-[6rem] rounded-full text-white mx-auto'>
                                Pending
                          </p>
                           )}
                         </td>
-                        <td className='px-2 py-2'>
+                        <td className='border border-[#2c2c2c]'>
                            <Link to={`/order/${order._id}`}>
-                              <button className='bg-pink-600 text-white py-2 px-3 rounded'>
+                              <p className='w-[120px] bg-[#d51f69] hover:bg-[#C2185B] text-center text-white py-1 px-2 rounded-full mx-auto'>
                                 View Details
-                              </button>
+                              </p>
                            </Link>
                         </td>
                     </tr>

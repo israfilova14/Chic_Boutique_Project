@@ -71,9 +71,9 @@ const UserList = () => {
 
   return (
     <div className='p-4'>
-      <h1 className='text-3xl font-semibold mb-4 text-center'>
-        User <span className='text-[#1DB954]'>Managament.</span>
-      </h1>
+      <h2 className='text-2xl font-semibold mb-4 ml-[9rem]'>
+      User <span className='text-[#1DB954]'>Managament.</span>
+      </h2>
 
       {
       isLoading 
@@ -89,23 +89,23 @@ const UserList = () => {
       ) : 
       (
         <div className='flex flex-col md:flex-row'>
-          <table className='w-full md:w-4/5 mx-auto border border-gray-300'>
-            <thead className='bg-white text-black'>
-              <tr className='border border-black'>
-                <th className='px-4 py-2 text-left border border-black'>ID</th>
-                <th className='px-4 py-2 text-left border border-black'>NAME</th>
-                <th className='px-4 py-2 text-left border border-black'>EMAIL</th>
-                <th className='px-4 py-2 text-left border border-black'>ADMIN</th>
-                <th className='px-4 py-2 text-left border border-black'>ACTIONS</th>
-                <th className='px-4 py-2 text-left border border-black'>CREATED AT</th>
+          <table className='w-full md:w-4/5 mx-auto bg-white text-black'>
+            <thead>
+              <tr>
+                <th className='px-4 py-2 text-left border border-black font-semibold'>ID</th>
+                <th className='px-4 py-2 text-left border border-black font-semibold'>NAME</th>
+                <th className='px-4 py-2 text-left border border-black font-semibold'>EMAIL</th>
+                <th className='px-4 py-2 text-left border border-black font-semibold'>ADMIN</th>
+                <th className='px-4 py-2 text-left border border-black font-semibold'>ACTIONS</th>
+                <th className='px-4 py-2 text-left border border-black font-semibold'>CREATED AT</th>
               </tr>
             </thead>
             <tbody>
               {
                 users.map((user) => (
-                 <tr key={user._id} className='border border-gray-300'>
-                  <td className='px-4 py-2 border border-gray-300'>{user._id}</td>
-                  <td className='px-4 py-2 border border-gray-300'>
+                 <tr key={user._id}>
+                  <td className='px-4 py-2 border border-black'>{user._id}</td>
+                  <td className='px-4 py-2 border border-black'>
                     {
                     editableUserId === user._id 
                      ? 
@@ -130,7 +130,7 @@ const UserList = () => {
                     )
                     }
                   </td>
-                  <td className='px-4 py-2 border border-gray-300'>
+                  <td className='px-4 py-2 border border-black'>
                     {
                      editableUserId === user._id 
                      ? 
@@ -155,10 +155,15 @@ const UserList = () => {
                      )
                     }
                   </td>
-                  <td className='px-4 py-2 border border-gray-300'>
-                    {user.isAdmin ? <FaCheck className='text-[#1DB954] text-lg ml-3'/> : <AiOutlineClose className='text-red-600 font-black text-xl ml-3'/>}
+                  <td className='px-4 py-2 border border-black'>
+                    {user.isAdmin 
+                        ? 
+                     <FaCheck className='text-[#1DB954] text-lg ml-3'/> 
+                        : 
+                     <AiOutlineClose className='text-red-600 font-black text-xl ml-3'/>
+                     }
                   </td>
-                  <td className='px-5 py-2 border border-gray-300'>
+                  <td className='px-5 py-2 border border-black'>
                     {editableUserId === user._id ? (
                       <div className='text-black'> 
                         <button onClick={() => handleSaveEdit(user._id)} className='text-[#1DB954]'>
@@ -188,7 +193,7 @@ const UserList = () => {
                       )
                     }
                   </td>
-                  <td className='px-4 py-2'>{new Date(user.createdAt).toLocaleDateString()}</td>
+                  <td className='px-4 py-2 border border-black'>{new Date(user.createdAt).toLocaleDateString()}</td>
                 </tr>
               ))}
             </tbody>

@@ -15,7 +15,7 @@ const Header = () => {
   };
   return (
     <div className='ml-[6rem]'>
-      <h2 className='text-2xl font-semibold ml-[2rem]'>Chic <span className='text-[#1DB954]'>Boutique</span></h2>
+      <h2 className='text-3xl font-semibold ml-[2rem]'>Chic <span className='text-[#1DB954]'>Boutique</span></h2>
       <div className='flex justify-around'>
         <div className='xl:block lg:hidden md: hidden'>
            <div className='grid grid-cols-2'>

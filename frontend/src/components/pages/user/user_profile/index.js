@@ -59,7 +59,7 @@ const Profile = () => {
                     <input
                      type='text' 
                      placeholder='Enter your name...' 
-                     className='form-input p-2 rounded-sm w-full bg-[#f5f5f5]'
+                     className='form-input p-2 rounded-sm w-full bg-[#4a4a4a] text-white'
                      value={username}
                      onChange={e => setUsername(e.target.value)}
                     />
@@ -69,7 +69,7 @@ const Profile = () => {
                     <input
                      type='text' 
                      placeholder='Enter your email...' 
-                     className='form-input p-2 rounded-sm w-full bg-[#f5f5f5]'
+                     className='form-input p-2 rounded-sm w-full bg-[#4a4a4a] text-white'
                      value={email}
                      onChange={e => setEmail(e.target.value)}
                     />
@@ -79,7 +79,7 @@ const Profile = () => {
                     <input
                      type='password' 
                      placeholder='Enter your password...' 
-                     className='form-input p-2 rounded-sm w-full bg-[#f5f5f5]'
+                     className='form-input p-2 rounded-sm w-full bg-[#4a4a4a] text-white'
                      value={password}
                      onChange={e => setPassword(e.target.value)}
                     />
@@ -89,7 +89,7 @@ const Profile = () => {
                     <input
                      type='password' 
                      placeholder='Confirm Password...' 
-                     className='form-input p-2 rounded-sm w-full bg-[#f5f5f5]'
+                     className='form-input p-2 rounded-sm w-full bg-[#4a4a4a] text-white'
                      value={confirmPassword}
                      onChange={e => setConfirmPassword(e.target.value)}
                     />

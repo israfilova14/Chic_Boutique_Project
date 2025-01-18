@@ -43,7 +43,7 @@ const ProductCard = ({p}) => {
             </p>
          </div>
          <p className='mb-3 font-normal text-[#cfcfcf]'>
-          {p?.description?.substring(0, 60)}...
+          {p?.description}
          </p>
          <section className='flex justify-between items-center'>
             <Link 
