@@ -12,7 +12,7 @@ const Message = ({variant, children}) => {
      }
   }
   return (
-    <div className={`p-4 rounded ${getVariantClass()}`}>
+    <div className={`p-4 w-[80%] rounded ${getVariantClass()}`}>
        {children}
     </div>
   )

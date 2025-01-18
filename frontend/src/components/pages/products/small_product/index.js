@@ -4,17 +4,19 @@ import HeartIcon from "../heart_icon/index";
 
 const SmallProduct = ({ product }) => {
   return (
-    <div className="w-[20rem] ml-[2rem] p-3">
-      <div className="relative h-[240px] w-[240px] overflow-hidden">
-        <img
-          src={product?.image}
-          alt={product?.name}
-          className="h-full w-full rounded"
-        />
-        <HeartIcon
-          product={product}
-          className="absolute top-2 right-2 w-8 h-8 text-red-500 bg-white rounded-full shadow-lg"
-        />
+    <div className="flex justify-evenly mt-[10px]">
+      <div className="relative flex flex-col">
+        <div>
+          <img
+            src={product?.image}
+            alt={product?.name}
+            className="h-[240px] w-[230px] rounded"
+          />
+          <HeartIcon
+            product={product}
+            className="absolute top-2 right-2 w-8 h-8 text-red-500 bg-white rounded-full shadow-lg"
+          />
+        </div>
         <div className="p-4">
           <Link to={`/product/${product._id}`}>
             <h2 className="flex justify-between items-center">

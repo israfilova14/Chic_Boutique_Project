@@ -6,13 +6,12 @@ import Message from '../../../helpers/message/index.js';
 import ProgressSteps from '../../../helpers/progress_steps/index.js';
 import Loader from '../../../helpers/loader/index.js';
 import { clearCartItems } from '../../../../redux/features/cart/cartSlice';
-import { useCreateOrderMutation } from '../../../../redux/api/orderApiSlice';
+import { useCreateOrderMutation} from '../../../../redux/api/orderApiSlice';
 
 const PlaceOrder = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart);
-  console.log('cart', cart)
   const [createOrder, { isLoading, error }] = useCreateOrderMutation();
 
   useEffect(() => {
@@ -33,8 +32,7 @@ const PlaceOrder = () => {
         totalPrice: cart.totalPrice,
       }).unwrap();
   
-      // Sifariş uğurla yaradıldıqdan sonra
-      dispatch(clearCartItems()); // Səbəti boşaltmaq
+      dispatch(clearCartItems());  
       toast.success("Order placed successfully!");
       navigate(`/order/${res._id}`);
     } catch (err) {
@@ -91,7 +89,7 @@ const PlaceOrder = () => {
                       <div className='flex justify-between flex-wrap p-2 rounded-md'>
                         <ul className='text-md'>
                            <li>
-                             <span className='font-medium mb-1'>Items:</span>{"   "}${cart?.cartItems[0]?.price}
+                             <span className='font-medium mb-1'>Items:</span>{"   "}{cart?.cartItems[0]?.qty}
                            </li>
                            <li>
                              <span className='font-medium mb-1'>Shipping:</span>{"   "}${cart?.cartItems[0]?.shippingPrice}
@@ -100,7 +98,7 @@ const PlaceOrder = () => {
                              <span className='font-medium mb-1'>Tax:</span>{"   "}${cart?.taxPrice}
                            </li>
                            <li>
-                             <span className='font-medium mb-1'>Total:</span>{"   "}${cart?.totalPrice}
+                             <span className='font-medium mb-1'>Total:</span>{"   "}${cart?.cartItems[0]?.price}
                            </li>
                         </ul>
                         {
