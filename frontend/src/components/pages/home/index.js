@@ -5,6 +5,7 @@ import Loader from '../../helpers/loader';
 import Header from '../../layout/header';
 import Message from '../../helpers/message';
 import Product from '../products/product';
+import Footer from '../../layout/footer';
 
 const Home = () => {
   const {keyword} = useParams();
@@ -37,6 +38,7 @@ const Home = () => {
               ))
             }
         </div>
+        <Footer/>
         </>
        )
        }
